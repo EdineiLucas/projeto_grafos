@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "dicionario.h"
 
 #define INFINITY 99999
-#define MAX_VERTICES 51
+#define MAX_VERTICES 52
 
 typedef struct aresta{
     int id_vizinho;
@@ -66,11 +67,14 @@ Grafo* insere_aresta_direcionda(Grafo *G, int id_saida, int id_destino, int peso
 }
 
 void imprimir_grafo(Grafo * G){
+    materias * s ;
     while(G!= NULL){
-        printf("Vertices: %d", G->ID);
+        s = busca_nome(G->ID);
+        printf("Materia: %s", s->nome);
         Aresta *a = G->prim_vizinho;
         while(a != NULL){
-            printf("->(Aresta:%d Peso:%d)", a->id_vizinho, a->peso);
+            s = busca_nome(a->id_vizinho);
+            printf("->(%s Peso:%d)", s->nome, a->peso);
             if(a->proximo!= NULL){
                 printf("->");
             }
@@ -84,13 +88,9 @@ void imprimir_grafo(Grafo * G){
 int main (){
 
     Grafo * g = inicializa_Grafo();
-    g = insere_vertice(g, 14067);
-    g = insere_vertice(g, 14066);
-    g = insere_vertice(g, 14065);
-    g = insere_vertice(g, 14064);
-    g = insere_aresta_direcionda(g, 14064, 14069, 1);
-    busca_aresta(g, 14064, 14069);
-    busca_aresta(g, 14064, 14062);
+    for (int i = 51; i>=0; i--){
+        g = insere_vertice(g, m[i].ID);
+    }
     imprimir_grafo(g);
     return 0;
 }
