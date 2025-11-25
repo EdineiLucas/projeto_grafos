@@ -12,72 +12,8 @@ typedef struct nome{
     int per;
 }materias;
 
-const materias m[MAX_VERTICES] = {
-    {.ID = 14064, .nome = "CI", .per = 1},
-    {.ID = 14065, .nome = "GAAL", .per = 1},
-    {.ID = 14066, .nome = "ICC", .per = 1},
-    {.ID = 14067, .nome = "INGI", .per = 1},
-    {.ID = 14068, .nome = "AP", .per = 2},
-    {.ID = 14069, .nome = "CVV", .per = 2},
-    {.ID = 14071, .nome = "AL", .per = 2},
-    {.ID = 14072, .nome = "INGII", .per = 2},
-    {.ID = 14073, .nome = "SD", .per = 2},
-    {.ID = 14074, .nome = "MD", .per = 2},
-    {.ID = 14075, .nome = "AEDS", .per = 3},
-    {.ID = 14078, .nome = "ACI", .per = 3},
-    {.ID = 14076, .nome = "FC", .per = 3},
-    {.ID = 14079, .nome = "IG", .per = 3},
-    {.ID = 14077, .nome = "Metodologia", .per = 3},
-    {.ID = 14085, .nome = "AN", .per = 4},
-    {.ID = 14083, .nome = "ACII", .per = 4},
-    {.ID = 14081, .nome = "FM", .per = 4},
-    {.ID = 14082, .nome = "PE", .per = 4},
-    {.ID = 14084, .nome = "POO", .per = 4},
-    {.ID = 14080, .nome = "BO", .per = 4},
-    {.ID = 14090, .nome = "WEB", .per = 5},
-    {.ID = 14088, .nome = "ES", .per = 5},
-    {.ID = 14086, .nome = "OSA", .per = 5},
-    {.ID = 14087, .nome = "PO", .per = 5},
-    {.ID = 14091, .nome = "PAA", .per = 5},
-    {.ID = 14089, .nome = "SO", .per = 5},
-    {.ID = 14096, .nome = "AG", .per = 6},
-    {.ID = 14093, .nome = "APS", .per = 6},
-    {.ID = 14092, .nome = "BDI", .per = 6},
-    {.ID = 14094, .nome = "PDP", .per = 6},
-    {.ID = 14095, .nome = "SB", .per = 6},
-    {.ID = 14102, .nome = "CPA", .per = 7},
-    {.ID = 14098, .nome = "CG", .per = 7},
-    {.ID = 14097, .nome = "BDII", .per = 7},
-    {.ID = 14101, .nome = "LFA", .per = 7},
-    {.ID = 14100, .nome = "Redes", .per = 7},
-    {.ID = 14099, .nome = "SistDist", .per = 7},
-    {.ID = 14104, .nome = "Compiladores", .per = 8},
-    {.ID = 14106, .nome = "GP", .per = 8},
-    {.ID = 14103, .nome = "IA", .per = 8},
-    {.ID = 14105, .nome = "PDI", .per = 8},
-    {.ID = 14108, .nome = "Empr", .per = 9},
-    {.ID = 14107, .nome = "IES", .per = 9},
-    {.ID = 14110, .nome = "TCC", .per = 9},
-    {.ID = 14109, .nome = "SI", .per = 9},
-    {.ID = 14111, .nome = "ADM", .per = 10},
-    {.ID = 14112, .nome = "OptatiaI", .per = 8},
-    {.ID = 14113, .nome = "OptatiaII", .per = 8},
-    {.ID = 14114, .nome = "OptatiaIII", .per = 9},
-    {.ID = 14115, .nome = "OptatiaIV", .per = 10}, 
-    {.ID = 14116, .nome = "OptatiaV", .per = 10}
-};
+extern const materias m[MAX_VERTICES];
 
-materias * busca_nome (int x){
-    materias *mat = (materias*)malloc(sizeof(materias));
-    for (int i = 0; i<MAX_VERTICES; i++){
-        if (m[i].ID == x){
-            mat->ID = m[i].ID;
-            mat->nome = m[i].nome;
-            mat->per = m[i].per;
-            return mat;
-        }
-    }
-    return mat;
-}
+materias * busca_nome (int x);
 
 #endif
